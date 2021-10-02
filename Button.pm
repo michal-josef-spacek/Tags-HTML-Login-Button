@@ -232,16 +232,6 @@ L<Class::Utils>,
 L<Error::Pure>,
 L<Tags::HTML>.
 
-=head1 SEE ALSO
-
-=over
-
-=item L<Tags::HTML::Stars>
-
-Tags helper for stars evaluation.
-
-=back
-
 =head1 REPOSITORY
 
 L<https://github.com/michal-josef-spacek/Tags-HTML-Login-Button>

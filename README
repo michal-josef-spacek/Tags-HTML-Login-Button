@@ -128,10 +128,6 @@ EXAMPLE
 DEPENDENCIES
     Class::Utils, Error::Pure, Tags::HTML.
 
-SEE ALSO
-    Tags::HTML::Stars
-        Tags helper for stars evaluation.
-
 REPOSITORY
     <https://github.com/michal-josef-spacek/Tags-HTML-Login-Button>
 
