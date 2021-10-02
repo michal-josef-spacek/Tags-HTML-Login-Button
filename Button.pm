@@ -158,8 +158,9 @@ Returns undef.
  new():
          From Class::Utils::set_params():
                  Unknown parameter '%s'.
-         Parameter 'css' must be a 'CSS::Struct::Output::*' class.
-         Parameter 'tags' must be a 'Tags::Output::*' class.
+         From Tags::HTML::new():
+                 Parameter 'css' must be a 'CSS::Struct::Output::*' class.
+                 Parameter 'tags' must be a 'Tags::Output::*' class.
 
  process():
          From Tags::HTML::process():
