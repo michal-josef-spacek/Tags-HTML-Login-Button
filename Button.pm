@@ -126,8 +126,6 @@ Constructor.
 
 'CSS::Struct::Output' object for L<process_css> processing.
 
-It's required.
-
 Default value is undef.
 
 =item * C<link>
