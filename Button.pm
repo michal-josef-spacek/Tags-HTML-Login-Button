@@ -1,9 +1,10 @@
 package Tags::HTML::Login::Button;
 
+use base qw(Tags::HTML);
 use strict;
 use warnings;
 
-use Class::Utils qw(set_params);
+use Class::Utils qw(set_params split_params);
 use Error::Pure qw(err);
 
 our $VERSION = 0.01;
@@ -13,39 +14,25 @@ sub new {
 	my ($class, @params) = @_;
 
 	# Create object.
-	my $self = bless {}, $class;
-
-	# 'CSS::Struct::Output' object.
-	$self->{'css'} = undef;
+	my ($object_params_ar, $other_params_ar) = split_params(
+		['link', 'title'], @params);
+	my $self = $class->SUPER::new(@{$other_params_ar});
 
 	# Login button link.
 	$self->{'link'} = 'login';
-
-	# 'Tags::Output' object.
-	$self->{'tags'} = undef;
 
 	# Login button title.
 	$self->{'title'} = 'LOGIN';
 
 	# Process params.
-	set_params($self, @params);
-
-	# Check to 'CSS::Struct::Output' object.
-	if ($self->{'css'} && ! $self->{'css'}->isa('CSS::Struct::Output')) {
-		err "Parameter 'css' must be a 'CSS::Struct::Output::*' class.";
-	}
-
-	# Check to 'Tags' object.
-	if ($self->{'tags'} && ! $self->{'tags'}->isa('Tags::Output')) {
-		err "Parameter 'tags' must be a 'Tags::Output::*' class.";
-	}
+	set_params($self, @{$object_params_ar});
 
 	# Object.
 	return $self;
 }
 
 # Process 'Tags'.
-sub process {
+sub _process {
 	my $self = shift;
 
 	# Main content.
@@ -65,7 +52,7 @@ sub process {
 }
 
 # Process 'CSS::Struct'.
-sub process_css {
+sub _process_css {
 	my $self = shift;
 
 	$self->{'css'}->put(
@@ -120,6 +107,8 @@ Tags::HTML::Login::Button - Tags helper for login button.
 
 Constructor.
 
+Returns instance of object.
+
 =over 8
 
 =item * C<css>
@@ -172,6 +161,14 @@ Returns undef.
          Parameter 'css' must be a 'CSS::Struct::Output::*' class.
          Parameter 'tags' must be a 'Tags::Output::*' class.
 
+ process():
+         From Tags::HTML::process():
+                 Parameter 'tags' isn't defined.
+
+ process_css():
+         From Tags::HTML::process_css():
+                 Parameter 'css' isn't defined.
+
 =head1 EXAMPLE
 
  use strict;
@@ -205,7 +202,8 @@ Returns undef.
 =head1 DEPENDENCIES
 
 L<Class::Utils>,
-L<Error::Pure>.
+L<Error::Pure>,
+L<Tags::HTML>.
 
 =head1 SEE ALSO
 

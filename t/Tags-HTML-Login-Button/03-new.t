@@ -24,7 +24,9 @@ isa_ok($obj, 'Tags::HTML::Login::Button');
 
 # Test.
 eval {
-	Tags::HTML::Login::Button->new;
+	Tags::HTML::Login::Button->new(
+		'tags' => 0,
+	);
 };
 is(
 	$EVAL_ERROR,
