@@ -1,0 +1,115 @@
+NAME
+    Tags::HTML::Login::Button - Tags helper for login button.
+
+SYNOPSIS
+     use Tags::HTML::Login::Button;
+
+     my $obj = Tags::HTML::Login::Button->new(%params);
+     $obj->process;
+     $obj->process_css;
+
+METHODS
+  "new"
+     my $obj = Tags::HTML::Login::Button->new(%params);
+
+    Constructor.
+
+    *       "css"
+
+            'CSS::Struct::Output' object for process_css processing.
+
+            It's required.
+
+            Default value is undef.
+
+    *       "link"
+
+            Login button link.
+
+            Default value is 'login'.
+
+    *       "tags"
+
+            'Tags::Output' object.
+
+            Default value is undef.
+
+    *       "title"
+
+            Login button title.
+
+            Default value is 'LOGIN'.
+
+  "process"
+     $obj->process($percent_value);
+
+    Process Tags structure for gradient.
+
+    Returns undef.
+
+  "process_css"
+     $obj->process_css;
+
+    Process CSS::Struct structure for output.
+
+    Returns undef.
+
+ERRORS
+     new():
+             From Class::Utils::set_params():
+                     Unknown parameter '%s'.
+             Parameter 'css' must be a 'CSS::Struct::Output::*' class.
+             Parameter 'tags' must be a 'Tags::Output::*' class.
+
+EXAMPLE
+     use strict;
+     use warnings;
+
+     use CSS::Struct::Output::Indent;
+     use Tags::HTML::Login::Button;
+     use Tags::Output::Indent;
+
+     # Object.
+     my $css = CSS::Struct::Output::Indent->new;
+     my $tags = Tags::Output::Indent->new;
+     my $obj = Tags::HTML::Login::Button->new(
+             'css' => $css,
+             'tags' => $tags,
+     );
+
+     # Process indicator.
+     $obj->process_css;
+     $obj->process;
+
+     # Print out.
+     print "CSS\n";
+     print $css->flush."\n";
+     print "HTML\n";
+     print $tags->flush."\n";
+
+     # Output:
+     # TODO
+
+DEPENDENCIES
+    Class::Utils, Error::Pure.
+
+SEE ALSO
+    Tags::HTML::Stars
+        Tags helper for stars evaluation.
+
+REPOSITORY
+    <https://github.com/michal-josef-spacek/Tags-HTML-Login-Button>
+
+AUTHOR
+    Michal Josef Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
+
+LICENSE AND COPYRIGHT
+    © Michal Josef Špaček 2021
+
+    BSD 2-Clause License
+
+VERSION
+    0.01
+
