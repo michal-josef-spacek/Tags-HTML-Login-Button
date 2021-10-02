@@ -46,7 +46,7 @@ sub new {
 
 # Process 'Tags'.
 sub process {
-	my ($self, $percent_value) = @_;
+	my $self = shift;
 
 	# Main content.
 	$self->{'tags'}->put(
