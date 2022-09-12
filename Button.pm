@@ -180,6 +180,8 @@ Returns undef.
 
 =head1 EXAMPLE
 
+=for comment filename=button_html_css.pl
+
  use strict;
  use warnings;
 
