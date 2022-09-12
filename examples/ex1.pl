@@ -37,13 +37,20 @@ print $tags->flush."\n";
 # }
 # .login {
 #         text-align: center;
-#         background-color: blue;
-#         padding: 1em;
 # }
 # .login a {
 #         text-decoration: none;
-#         color: white;
-#         font-size: 3em;
+#         background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
+#         background-repeat: repeat-x;
+#         border: 1px solid #adadad;
+#         border-radius: 4px;
+#         color: black;
+#         font-family: sans-serif!important;
+#         padding: 15px 40px;
+# }
+# .login a:hover {
+#         background-color: #e0e0e0;
+#         background-image: none;
 # }
 #
 # HTML
