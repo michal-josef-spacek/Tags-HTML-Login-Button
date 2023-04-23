@@ -178,7 +178,7 @@ Returns undef.
          From Tags::HTML::process_css():
                  Parameter 'css' isn't defined.
 
-=head1 EXAMPLE
+=head1 EXAMPLE1
 
 =for comment filename=button_html_css.pl
 
@@ -243,6 +243,43 @@ Returns undef.
  #     </a>
  #   </div>
  # </body>
+
+=head1 EXAMPLE2
+
+=for comment filename=plack_app_login.pl
+
+ use strict;
+ use warnings;
+ 
+ use CSS::Struct::Output::Indent;
+ use Plack::App::Tags::HTML;
+ use Plack::Runner;
+ use Tags::Output::Indent;
+ use Unicode::UTF8 qw(decode_utf8);
+ 
+ my $app = Plack::App::Tags::HTML->new(
+         'component' => 'Tags::HTML::Login::Button',
+         'constructor_args' => {
+                 'title' => decode_utf8('Přihlašovací tlačítko'),
+         },
+         'css' => CSS::Struct::Output::Indent->new,
+         'tags' => Tags::Output::Indent->new(
+                 'xml' => 1,
+                 'preserved' => ['style'],
+         ),
+         'title' => decode_utf8('Přihlašovací tlačítko'),
+ )->to_app;
+ Plack::Runner->new->run($app);
+
+ # Output screenshot is in images/ directory.
+
+=begin html
+
+<a href="https://raw.githubusercontent.com/michal-josef-spacek/Tags-HTML-Login-Button/master/images/plack_app_login.png">
+  <img src="https://raw.githubusercontent.com/michal-josef-spacek/Tags-HTML-Login-Button/master/images/plack_app_login.png" alt="Web app example" width="300px" height="300px" />
+</a>
+
+=end html
 
 =head1 DEPENDENCIES
 
