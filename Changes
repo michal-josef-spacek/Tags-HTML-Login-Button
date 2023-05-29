@@ -1,5 +1,6 @@
 0.04
  - Regen example plack_app_login.pl.
+ - Update Module::Install to 1.21 version.
 
 0.03 2023-04-23T20:53:28+02:00
  - Add example web app and screenshot.
