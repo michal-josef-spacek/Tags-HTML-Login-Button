@@ -1,4 +1,5 @@
 0.04
+ - Add test for missing Tags object.
  - Regen example plack_app_login.pl.
  - Update Module::Install to 1.21 version.
 
