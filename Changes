@@ -1,5 +1,6 @@
 0.04
  - Add test for missing Tags object.
+ - Add test for missing CSS::Struct object.
  - Regen example plack_app_login.pl.
  - Update Module::Install to 1.21 version.
 
