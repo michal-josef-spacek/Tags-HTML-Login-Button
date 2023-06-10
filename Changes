@@ -1,4 +1,5 @@
 0.04
+ - Add Tags::HTML::Login::Access to SEE ALSO section in doc.
  - Add test for missing Tags object.
  - Add test for missing CSS::Struct object.
  - Regen example plack_app_login.pl.
